@@ -18,7 +18,4 @@ async def create_products(request : ProductCreate,products: Products = Depends(P
 @router.post("/categories/create")
 async def create_categorie(request : CategoryCreate,products: Products = Depends(Products.create)):
     
-    return await products.create_category(request.model_dump())
-    
-
-
+    return await products.create_category(request.model_dump())     

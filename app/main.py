@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from app.database import engine,Base
 from app.Router.user import router as auth
 from app.Router.products import router as product
+from app.Router.order import route as order
 from app.middleware.middeware import AuthenticateMiddleware
 
 
@@ -20,3 +21,4 @@ app = FastAPI(lifespan=lifspan)
 # app.add_middleware(AuthenticateMiddleware)
 app.include_router(auth)
 app.include_router(product)
+app.include_router(order)
